@@ -154,7 +154,7 @@
     padding: 0 var(--bd-spacing-xs);
   }
 
-  .bd-input__icon svg {
+  .bd-input__icon :global(svg) {
     width: 1.25rem;
     height: 1.25rem;
   }

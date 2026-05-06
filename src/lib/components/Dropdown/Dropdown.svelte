@@ -60,6 +60,7 @@
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="bd-dropdown" onfocusout={handleBlur} onkeydown={handleKeydown}>
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
   <div class="bd-dropdown__trigger" onclick={() => isOpen = !isOpen}>
     {@render trigger()}
   </div>

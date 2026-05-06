@@ -39,7 +39,7 @@
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div class="bd-modal-backdrop" onclick={handleBackdropClick} onkeydown={handleKeydown} role="presentation">
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <div class="bd-modal" role="dialog" aria-modal="true" aria-label={header} onclick={(e) => e.stopPropagation()} onkeydown={() => {}}>
+    <div class="bd-modal" role="dialog" aria-modal="true" aria-label={header} tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={() => {}}>
       {#if header}
         <div class="bd-modal__header">
           <h2 class="bd-modal__title">{header}</h2>

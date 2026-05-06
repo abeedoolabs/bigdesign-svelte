@@ -128,6 +128,7 @@
     onclick={() => { if (!disabled) isOpen = !isOpen; }}
   >
     {#if filterable && isOpen}
+      <!-- svelte-ignore a11y_autofocus -->
       <input
         class="bd-select__filter-input"
         bind:value={filterText}

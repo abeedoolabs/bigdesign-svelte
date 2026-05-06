@@ -16,8 +16,10 @@
   let isVisible = $state(false);
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <span
   class="bd-tooltip-wrapper"
+  role="none"
   onmouseenter={() => isVisible = true}
   onmouseleave={() => isVisible = false}
   onfocus={() => isVisible = true}
