@@ -206,7 +206,9 @@
   }
 
   .overview__browse-btn:hover {
-    background: var(--bd-color-primary-10);
+    background: var(--bd-color-primary-40);
+    color: var(--bd-color-white);
+    border-color: var(--bd-color-primary-40);
     text-decoration: none;
   }
 
