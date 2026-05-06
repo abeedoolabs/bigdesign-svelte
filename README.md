@@ -4,6 +4,8 @@
 
 > **Disclaimer:** This project is not affiliated with, endorsed by, or maintained by BigCommerce. BigDesign is a trademark of BigCommerce. This is an independent, community-driven port created to bring BigDesign's design language to the Svelte ecosystem.
 
+**[Live Playground](https://bigdesign-svelte.abeedoo.com)** | **[npm](https://www.npmjs.com/package/@abeedoo/bigdesign-svelte)** | **[GitHub](https://github.com/abeedoolabs/bigdesign-svelte)**
+
 ## What is this?
 
 BigDesign is BigCommerce's open-source design system for building apps that integrate with the BigCommerce admin panel. The original library is built in React. This project ports those components to Svelte 5, matching the same visual appearance, props API, and accessibility behavior using modern Svelte patterns (runes, snippets, scoped CSS).
@@ -15,27 +17,42 @@ BigDesign is BigCommerce's open-source design system for building apps that inte
 - [BigDesign GitHub](https://github.com/bigcommerce/big-design) - React source code
 - [BigDesign Theme](https://github.com/bigcommerce/big-design/tree/main/packages/big-design-theme) - Design tokens
 
-## Installation
+## Getting Started
+
+### Install
 
 ```bash
 npm install @abeedoo/bigdesign-svelte
 ```
 
-## Usage
+### Add the theme
+
+Import the theme CSS once in your root `+layout.svelte` to load the design tokens (colors, spacing, typography, etc.) as CSS custom properties:
 
 ```svelte
 <script>
   import '@abeedoo/bigdesign-svelte/theme';
-  import { Button, Input, Panel } from '@abeedoo/bigdesign-svelte';
 </script>
-
-<Panel header="My Panel">
-  <Input label="Name" placeholder="Enter your name" />
-  <Button variant="primary">Submit</Button>
-</Panel>
 ```
 
-Import the theme CSS once in your root layout to load the design tokens (colors, spacing, typography, etc.) as CSS custom properties.
+### Use components
+
+```svelte
+<script>
+  import { Button, Input, Panel, Alert } from '@abeedoo/bigdesign-svelte';
+
+  let name = $state('');
+</script>
+
+<Panel header="Create Product">
+  <Input label="Product Name" placeholder="Enter a name" bind:value={name} />
+  <Button variant="primary">Save</Button>
+</Panel>
+
+<Alert variant="success" header="Saved!">Your product has been created.</Alert>
+```
+
+Browse all components with live, interactive demos at **[bigdesign-svelte.abeedoo.com](https://bigdesign-svelte.abeedoo.com)**.
 
 ## Components
 
