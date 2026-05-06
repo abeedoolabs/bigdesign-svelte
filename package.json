@@ -1,6 +1,6 @@
 {
 	"name": "@abeedoo/bigdesign-svelte",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Svelte 5 port of BigCommerce's BigDesign component library",
 	"type": "module",
 	"scripts": {
@@ -22,7 +22,8 @@
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"!dist/**/*.spec.*",
+		"llms.txt"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
