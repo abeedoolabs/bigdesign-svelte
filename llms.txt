@@ -1,0 +1,108 @@
+# BigDesign Svelte
+
+> Unofficial Svelte 5 port of BigCommerce's BigDesign React component library — 46 components with CSS custom properties theming, runes, and snippets.
+
+Install: `npm install @abeedoo/bigdesign-svelte`
+Import theme once in root layout: `import '@abeedoo/bigdesign-svelte/theme'`
+Import components: `import { Button, Input, Panel } from '@abeedoo/bigdesign-svelte'`
+
+All components use `--bd-*` CSS custom properties for theming, Svelte 5 `$props()` for inputs, `$bindable()` for two-way binding, and `Snippet` types for slot composition. Component names match the original React BigDesign library exactly.
+
+## Components — Layout
+
+- [Box](https://bigdesign-svelte.abeedoo.com/layout#box): Generic container with padding, margin, background, shadow style props. Props: `as`, `padding`, `margin`, `backgroundColor`, `shadow('raised'|'floating')`, `borderRadius`.
+- [Flex](https://bigdesign-svelte.abeedoo.com/layout#flex): Flexbox container. Props: `direction`, `gap`, `alignItems`, `justifyContent`, `flexWrap`. Use with `FlexItem` children (`flexGrow`, `flexBasis`, `flexOrder`).
+- [Grid](https://bigdesign-svelte.abeedoo.com/layout#grid): CSS Grid container. Props: `columns`, `rows`, `areas`, `gap`, `columnGap`, `rowGap`. Use with `GridItem` children (`area`, `column`, `row`).
+- [Panel](https://bigdesign-svelte.abeedoo.com/layout#panel): Card container with raised shadow. Props: `header`, `description`, `action` (Snippet).
+- [Collapse](https://bigdesign-svelte.abeedoo.com/layout#collapse): Expandable/collapsible section. Props: `title` (required), `initiallyOpen`, `onCollapseChange`.
+- [AccordionPanel](https://bigdesign-svelte.abeedoo.com/layout#accordionpanel): Multiple collapsible panels. Props: `items` (AccordionItem[]: `{id, title, content?, defaultExpanded?}`), `children` (Snippet<[AccordionItem]>).
+
+## Components — Actions
+
+- [Button](https://bigdesign-svelte.abeedoo.com/actions#button): Props: `variant('primary'|'secondary'|'subtle'|'utility')`, `actionType('normal'|'destructive')`, `isLoading`, `disabled`, `iconLeft` (Snippet), `iconRight` (Snippet), `iconOnly` (Snippet), `mobileWidth('auto'|'100%')`.
+- [ButtonGroup](https://bigdesign-svelte.abeedoo.com/actions#buttongroup): Visually connects child Button components with shared borders.
+- [Link](https://bigdesign-svelte.abeedoo.com/actions#link): Styled anchor. Props: `href`, `external` (adds target="_blank" and icon).
+- [Dropdown](https://bigdesign-svelte.abeedoo.com/actions#dropdown): Context menu. Props: `items` (DropdownItem[]), `groups` (DropdownItemGroup[]), `placement`, `onItemClick`, `trigger` (Snippet, required).
+
+## Components — Forms
+
+- [Input](https://bigdesign-svelte.abeedoo.com/forms#input): Text input. Props: `label`, `description`, `error` (string|string[]), `value` (bindable), `iconLeft` (Snippet), `iconRight` (Snippet). Plus all HTML input attributes.
+- [Textarea](https://bigdesign-svelte.abeedoo.com/forms#textarea): Multi-line input. Props: `label`, `description`, `error`, `value` (bindable), `resize`.
+- [Select](https://bigdesign-svelte.abeedoo.com/forms#select): Single-select dropdown. Generic `<T>`. Props: `options` (SelectOption<T>[]|SelectOptionGroup<T>[]), `value` (bindable), `label`, `placeholder`, `filterable`, `onOptionChange`.
+- [MultiSelect](https://bigdesign-svelte.abeedoo.com/forms#multiselect): Multi-select with chips. Generic `<T>`. Props: `options` (MultiSelectOption<T>[]), `value` (bindable T[]), `filterable`, `selectAll`, `onOptionsChange`.
+- [Checkbox](https://bigdesign-svelte.abeedoo.com/forms#checkbox): Props: `label` (required), `checked` (bindable), `description`, `indeterminate`, `error`.
+- [Radio](https://bigdesign-svelte.abeedoo.com/forms#radio): Use `bind:group` for radio groups. Props: `label` (required), `group` (bindable), `name`, `value`, `description`.
+- [Switch](https://bigdesign-svelte.abeedoo.com/forms#switch): Compact toggle. Props: `label`, `checked` (bindable), `disabled`.
+- [Toggle](https://bigdesign-svelte.abeedoo.com/forms#toggle): Larger toggle switch. Props: `label`, `checked` (bindable), `disabled`.
+- [Counter](https://bigdesign-svelte.abeedoo.com/forms#counter): Numeric stepper. Props: `value` (required), `step`, `min`, `max`, `label`, `error`, `onCountChange` (required).
+- [Search](https://bigdesign-svelte.abeedoo.com/forms#search): Search input with icon and clear. Props: `value` (bindable), `label`, `onSearch`, `onClear`.
+- [Datepicker](https://bigdesign-svelte.abeedoo.com/forms#datepicker): Native date input styled with BigDesign tokens. Props: `value` (bindable, YYYY-MM-DD), `label`, `min`, `max`, `onDateChange`.
+- [FileUploader](https://bigdesign-svelte.abeedoo.com/forms#fileuploader): Drag-and-drop upload zone. Props: `label`, `description`, `accept`, `multiple`, `error`, `onFilesChange`.
+- [Fieldset](https://bigdesign-svelte.abeedoo.com/forms#fieldset): Groups form fields. Props: `legend`, `description`.
+- [Form](https://bigdesign-svelte.abeedoo.com/forms#form): Form wrapper. Props: `fullWidth`. Use with `FormGroup` for spacing.
+
+## Components — Data Display
+
+- [Typography](https://bigdesign-svelte.abeedoo.com/data-display#typography): Props: `variant('h0'|'h1'|'h2'|'h3'|'h4'|'text'|'small')`, `as` (override element), `color`, `ellipsis`.
+- [HR](https://bigdesign-svelte.abeedoo.com/data-display#typography): Horizontal rule styled with BigDesign border color.
+- [Badge](https://bigdesign-svelte.abeedoo.com/data-display#badge): Status indicator. Props: `label` (required), `variant('success'|'warning'|'danger'|'primary'|'secondary')`.
+- [Chip](https://bigdesign-svelte.abeedoo.com/data-display#chip): Compact tag element. Props: `label` (required), `icon` (Snippet), `onDelete`.
+- [Lozenge](https://bigdesign-svelte.abeedoo.com/data-display#lozenge): Small pill-shaped status. Props: `label` (required), `variant`.
+- [List](https://bigdesign-svelte.abeedoo.com/data-display#list): Styled ul/ol. Props: `ordered`. Children are `<li>` elements.
+- [Table](https://bigdesign-svelte.abeedoo.com/data-display#table): Data table. Generic `<T>`. Props: `columns` (TableColumn<T>[]: `{header, hash, render, sortKey?, width?, align?}`), `items`, `keyField`, `sortable`, `stickyHeader`, `headerless`.
+- [StatefulTable](https://bigdesign-svelte.abeedoo.com/data-display#statefultable): Table with built-in sorting, pagination, selection. Props: `columns`, `items`, `pagination`, `itemsPerPage`, `selectable`, `onSelectionChange`, `onRowClick`.
+
+## Components — Feedback
+
+- [Alert](https://bigdesign-svelte.abeedoo.com/feedback#alert): Banner alert. Props: `variant('success'|'error'|'warning'|'info')`, `header`, `onClose`, `actions` (Snippet).
+- [InlineMessage](https://bigdesign-svelte.abeedoo.com/feedback#inlinemessage): Compact inline status. Props: `variant`, `actions` (Snippet).
+- [Message](https://bigdesign-svelte.abeedoo.com/feedback#message): Card-style message with left border accent. Props: `variant`, `header`, `onClose`, `actions` (Snippet).
+- [StatusMessage](https://bigdesign-svelte.abeedoo.com/feedback#statusmessage): Inline icon + text status. Props: `variant`.
+- [ProgressBar](https://bigdesign-svelte.abeedoo.com/feedback#progressbar): Horizontal progress. Props: `percent` (omit for indeterminate animation).
+- [ProgressCircle](https://bigdesign-svelte.abeedoo.com/feedback#progresscircle): Circular progress. Props: `percent`, `size('xxSmall'|'xSmall'|'small'|'medium'|'large')`, `error`.
+
+## Components — Navigation
+
+- [Tabs](https://bigdesign-svelte.abeedoo.com/navigation#tabs): Tab navigation. Props: `tabs` (Tab[]: `{id, title, disabled?}`), `activeTab` (bindable), `onTabClick`.
+- [PillTabs](https://bigdesign-svelte.abeedoo.com/navigation#pilltabs): Pill-shaped filter tabs. Props: `tabs` (PillTab[]), `activeTab` (bindable), `onTabClick`.
+- [Stepper](https://bigdesign-svelte.abeedoo.com/navigation#stepper): Step progress indicator. Props: `steps` (Step[]: `{label, description?}`), `currentStep` (zero-based index).
+- [OffsetPagination](https://bigdesign-svelte.abeedoo.com/navigation#offsetpagination): Full pagination with items-per-page. Props: `currentPage`, `totalItems`, `itemsPerPage`, `itemsPerPageOptions`, `onPageChange`, `onItemsPerPageChange`, `label`.
+- [StatelessPagination](https://bigdesign-svelte.abeedoo.com/navigation#statelesspagination): Minimal prev/next. Props: `currentPage`, `totalPages`, `onPageChange`.
+
+## Components — Overlays
+
+- [Modal](https://bigdesign-svelte.abeedoo.com/overlays#modal): Dialog overlay. Props: `isOpen` (bindable), `header`, `closeOnClickOutside`, `closeOnEsc`, `onClose`, `actions` (Snippet).
+- [Tooltip](https://bigdesign-svelte.abeedoo.com/overlays#tooltip): Hover/focus tooltip. Props: `text` (required), `placement('top'|'right'|'bottom'|'left')`.
+- [Popover](https://bigdesign-svelte.abeedoo.com/overlays#popover): Click-triggered floating panel. Props: `isOpen` (bindable), `placement`, `onClose`, `trigger` (Snippet, required).
+
+## Theming
+
+- All design tokens are CSS custom properties with `--bd-` prefix
+- Colors: `--bd-color-primary`, `--bd-color-danger`, `--bd-color-success`, `--bd-color-warning`, `--bd-color-secondary` (each with 10-70 shade variants)
+- Spacing: `--bd-spacing-xxs` (4px) through `--bd-spacing-xxxl` (48px)
+- Typography: `--bd-font-family` (Source Sans 3), `--bd-font-size-sm` through `--bd-font-size-xxxl`, `--bd-font-weight-extra-light` through `--bd-font-weight-semi-bold`
+- Borders: `--bd-radius-normal` (4px), `--bd-radius-circle` (50%), `--bd-color-border`
+- Shadows: `--bd-shadow-raised`, `--bd-shadow-floating`
+
+## Code Patterns
+
+```svelte
+<script lang="ts">
+  import { Button, Input, Panel, Alert } from '@abeedoo/bigdesign-svelte';
+  let name = $state('');
+</script>
+
+<Panel header="Create Product">
+  <Input label="Product Name" placeholder="Enter a name" bind:value={name} />
+  <Button variant="primary">Save</Button>
+</Panel>
+
+<Alert variant="success" header="Saved!">Product created successfully.</Alert>
+```
+
+## Optional
+
+- [GitHub Repository](https://github.com/abeedoolabs/bigdesign-svelte): Source code
+- [npm Package](https://www.npmjs.com/package/@abeedoo/bigdesign-svelte): Published package
+- [Live Playground](https://bigdesign-svelte.abeedoo.com): Interactive component demos
+- [Original BigDesign](https://github.com/bigcommerce/big-design): React source (reference implementation)

@@ -118,6 +118,16 @@ npm run package
 npm publish
 ```
 
+## AI Context
+
+This project includes an [`llms.txt`](llms.txt) file following the [llms.txt standard](https://llmstxt.org/) — a structured manifest that helps AI agents understand the library's components, props, and usage patterns. If you're building with an AI coding assistant, point it at this file for accurate component generation:
+
+```
+https://bigdesign-svelte.abeedoo.com/llms.txt
+```
+
+The file documents all 46 components with their props, types, defaults, and code examples in a format optimized for LLM consumption.
+
 ## License
 
 MIT
