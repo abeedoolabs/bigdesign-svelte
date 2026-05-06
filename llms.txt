@@ -1,6 +1,6 @@
 # BigDesign Svelte
 
-> Unofficial Svelte 5 port of BigCommerce's BigDesign React component library — 46 components with CSS custom properties theming, runes, and snippets.
+> Unofficial Svelte 5 port of BigCommerce's BigDesign React component library — 53 components with CSS custom properties theming, runes, and snippets.
 
 Install: `npm install @abeedoo/bigdesign-svelte`
 Import theme once in root layout: `import '@abeedoo/bigdesign-svelte/theme'`
@@ -83,6 +83,16 @@ All components use `--bd-*` CSS custom properties for theming, Svelte 5 `$props(
 - Typography: `--bd-font-family` (Source Sans 3), `--bd-font-size-sm` through `--bd-font-size-xxxl`, `--bd-font-weight-extra-light` through `--bd-font-weight-semi-bold`
 - Borders: `--bd-radius-normal` (4px), `--bd-radius-circle` (50%), `--bd-color-border`
 - Shadows: `--bd-shadow-raised`, `--bd-shadow-floating`
+
+## Components — Specialized
+
+- [AnchorNav](https://bigdesign-svelte.abeedoo.com/specialized#anchornav): Vertical sidebar navigation for scrolling to page sections. Props: `items` (AnchorNavItem[]: `{href, label}`), `activeHref` (bindable).
+- [Timepicker](https://bigdesign-svelte.abeedoo.com/specialized#timepicker): Native time input styled with BigDesign tokens. Props: `value` (bindable, HH:MM), `label`, `error`, `onTimeChange`.
+- [Tree](https://bigdesign-svelte.abeedoo.com/specialized#tree): Hierarchical tree view with expandable nodes, folder/file icons, and selection. Generic `<T>`. Props: `nodes` (TreeNode<T>[]: `{id, label, children?, disabled?}`), `expandedNodes` (bindable Set<T>), `selectedNode` (bindable), `iconless`, `onNodeClick`, `onExpand`, `renderLabel` (Snippet).
+- [StatefulTree](https://bigdesign-svelte.abeedoo.com/specialized#tree): Tree with built-in expand/select state management. Props: `nodes`, `defaultExpanded` (T[]), `iconless`, `onNodeClick`.
+- [TableNext](https://bigdesign-svelte.abeedoo.com/specialized#tablenext): Enhanced table with pinned columns, HTML cell rendering, and resizable columns. Generic `<T>`. Props: `columns` (TableNextColumn<T>[]: `{header, hash, render, renderHtml?, pin?('left'|'right'), width?, align?}`), `items`, `resizableColumns`, `sortable`, `onRowClick`.
+- [Worksheet](https://bigdesign-svelte.abeedoo.com/specialized#worksheet): Editable spreadsheet-like grid. Click cells to edit inline. Generic `<T extends Record<string, unknown>>`. Props: `columns` (WorksheetColumn<T>[]: `{hash, header, type?('text'|'number'|'select'|'checkbox'), options?, disabled?}`), `items`, `onChange`, `disabledRows`.
+- [FeatureSet](https://bigdesign-svelte.abeedoo.com/specialized#featureset): Feature comparison list with included/excluded indicators. Props: `features` (Feature[]: `{label, description?, included}`), `columns` (1|2|3).
 
 ## Code Patterns
 
