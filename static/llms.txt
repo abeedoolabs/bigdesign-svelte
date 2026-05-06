@@ -1,6 +1,6 @@
 # BigDesign Svelte
 
-> Unofficial Svelte 5 port of BigCommerce's BigDesign React component library — 53 components with CSS custom properties theming, runes, and snippets.
+> Unofficial Svelte 5 port of BigCommerce's BigDesign React component library — 52 components with CSS custom properties theming, runes, and snippets.
 
 Install: `npm install @abeedoo/bigdesign-svelte`
 Import theme once in root layout: `import '@abeedoo/bigdesign-svelte/theme'`
