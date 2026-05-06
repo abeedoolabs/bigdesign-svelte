@@ -6,7 +6,8 @@
     'Data Display': ['Typography', 'Badge', 'Chip', 'Lozenge', 'List', 'Table', 'StatefulTable'],
     'Feedback': ['Alert', 'InlineMessage', 'Message', 'StatusMessage', 'ProgressBar', 'ProgressCircle'],
     'Navigation': ['Tabs', 'PillTabs', 'Stepper', 'OffsetPagination', 'StatelessPagination'],
-    'Overlays': ['Modal', 'Tooltip', 'Popover']
+    'Overlays': ['Modal', 'Tooltip', 'Popover'],
+    'Specialized': ['AnchorNav', 'Timepicker', 'Tree', 'StatefulTree', 'TableNext', 'Worksheet', 'FeatureSet']
   };
 
   const total = Object.values(categories).flat().length;

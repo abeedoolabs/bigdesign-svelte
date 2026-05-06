@@ -67,6 +67,20 @@ export { Collapse } from './components/Collapse/index.js';
 export { AccordionPanel } from './components/AccordionPanel/index.js';
 export type { AccordionItem } from './components/AccordionPanel/index.js';
 
+// Specialized
+export { AnchorNav } from './components/AnchorNav/index.js';
+export type { AnchorNavItem } from './components/AnchorNav/index.js';
+export { Timepicker } from './components/Timepicker/index.js';
+export { TableNext } from './components/TableNext/index.js';
+export type { TableNextColumn } from './components/TableNext/index.js';
+export { Tree } from './components/Tree/index.js';
+export type { TreeNode } from './components/Tree/index.js';
+export { StatefulTree } from './components/StatefulTree/index.js';
+export { Worksheet } from './components/Worksheet/index.js';
+export type { WorksheetColumn } from './components/Worksheet/index.js';
+export { FeatureSet } from './components/FeatureSet/index.js';
+export type { Feature } from './components/FeatureSet/index.js';
+
 // Utilities
 export { GlobalStyles } from './components/GlobalStyles/index.js';
 

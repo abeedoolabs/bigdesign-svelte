@@ -36,6 +36,10 @@
     {
       label: 'Overlays', href: '/overlays',
       items: ['Modal', 'Tooltip', 'Popover']
+    },
+    {
+      label: 'Specialized', href: '/specialized',
+      items: ['AnchorNav', 'Timepicker', 'Tree', 'TableNext', 'Worksheet', 'FeatureSet']
     }
   ];
 
