@@ -15,7 +15,8 @@
     children,
   }: Props = $props();
 
-  let isOpen = $state(initiallyOpen);
+  let _initial = initiallyOpen;
+  let isOpen = $state(_initial);
   let contentId = `bd-collapse-content-${Math.random().toString(36).slice(2, 9)}`;
   let triggerId = `bd-collapse-trigger-${Math.random().toString(36).slice(2, 9)}`;
 

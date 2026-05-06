@@ -17,8 +17,9 @@
 
   let { items, children }: Props = $props();
 
+  let _items = items;
   let expanded = $state<Set<string>>(new Set(
-    items.filter(i => i.defaultExpanded).map(i => i.id)
+    _items.filter(i => i.defaultExpanded).map(i => i.id)
   ));
 
   function toggle(id: string) {

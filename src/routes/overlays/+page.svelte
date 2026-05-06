@@ -5,6 +5,15 @@
   let modalOpen = $state(false);
 </script>
 
+{#snippet modalActionsSnippet()}
+  <Button variant="secondary" mobileWidth="auto" onclick={() => modalOpen = false}>Cancel</Button>
+  <Button mobileWidth="auto" onclick={() => modalOpen = false}>Confirm</Button>
+{/snippet}
+
+{#snippet popTriggerSnippet()}
+  <Button variant="secondary" mobileWidth="auto">Open Popover</Button>
+{/snippet}
+
 <h1 class="page-title">Overlays</h1>
 <p class="page-description">Modals and tooltips for additional content and context.</p>
 
@@ -34,18 +43,13 @@
     { name: 'actions', type: 'Snippet', description: 'Footer action buttons' }
   ]}
 >
-  {#snippet modalActions()}
-    <Button variant="secondary" mobileWidth="auto" onclick={() => modalOpen = false}>Cancel</Button>
-    <Button mobileWidth="auto" onclick={() => modalOpen = false}>Confirm</Button>
-  {/snippet}
-
   <Button mobileWidth="auto" onclick={() => modalOpen = true}>Open Modal</Button>
 
   <Modal
     bind:isOpen={modalOpen}
     header="Confirm Action"
     onClose={() => modalOpen = false}
-    actions={modalActions}
+    actions={modalActionsSnippet}
   >
     <p style="margin:0">Are you sure you want to proceed with this action? This cannot be undone.</p>
   </Modal>
@@ -94,10 +98,7 @@
     { name: 'trigger', type: 'Snippet', description: 'Trigger element (required)' }
   ]}
 >
-  {#snippet popTrigger()}
-    <Button variant="secondary" mobileWidth="auto">Open Popover</Button>
-  {/snippet}
-  <Popover trigger={popTrigger} placement="bottom">
+  <Popover trigger={popTriggerSnippet} placement="bottom">
     <div style="font-family:var(--bd-font-family)">
       <p style="margin:0 0 0.5rem;font-weight:600">Popover Title</p>
       <p style="margin:0;font-size:0.875rem;color:var(--bd-color-text-secondary)">This is floating content that appears on click. Click outside or press Escape to dismiss.</p>

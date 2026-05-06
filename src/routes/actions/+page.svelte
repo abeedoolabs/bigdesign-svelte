@@ -3,6 +3,10 @@
   import { Button, ButtonGroup, Link, Dropdown } from '$lib/index.js';
 </script>
 
+{#snippet actionsTrigger()}
+  <Button variant="secondary" mobileWidth="auto">Actions Menu</Button>
+{/snippet}
+
 <h1 class="page-title">Actions</h1>
 <p class="page-description">Buttons, links, and dropdowns for user interaction.</p>
 
@@ -86,16 +90,13 @@
     { name: 'trigger', type: 'Snippet', description: 'Trigger element (required)' }
   ]}
 >
-  {#snippet dropTrigger()}
-    <Button variant="secondary" mobileWidth="auto">Actions Menu</Button>
-  {/snippet}
   <Dropdown
     items={[
       { content: 'Edit', value: 'edit' },
       { content: 'Duplicate', value: 'duplicate' },
       { content: 'Delete', value: 'delete' }
     ]}
-    trigger={dropTrigger}
+    trigger={actionsTrigger}
   />
 </Demo>
 

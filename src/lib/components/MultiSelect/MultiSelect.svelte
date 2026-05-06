@@ -96,15 +96,17 @@
     <p class="bd-multiselect__description">{description}</p>
   {/if}
 
-  <button
-    type="button"
+  <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+  <div
     class="bd-multiselect__trigger"
     class:bd-multiselect__trigger--error={hasError}
     class:bd-multiselect__trigger--disabled={disabled}
     id={selectId}
-    {disabled}
+    role="combobox"
+    tabindex={disabled ? -1 : 0}
     aria-haspopup="listbox"
     aria-expanded={isOpen}
+    aria-controls="{selectId}-dropdown"
     onclick={() => { if (!disabled) isOpen = !isOpen; }}
   >
     <div class="bd-multiselect__chips">
@@ -126,10 +128,10 @@
     <svg class="bd-multiselect__chevron" class:bd-multiselect__chevron--open={isOpen} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M7 10l5 5 5-5z" />
     </svg>
-  </button>
+  </div>
 
   {#if isOpen}
-    <div class="bd-multiselect__dropdown" role="listbox" aria-multiselectable="true">
+    <div class="bd-multiselect__dropdown" id="{selectId}-dropdown" role="listbox" aria-multiselectable="true">
       {#if filterable}
         <div class="bd-multiselect__filter">
           <input

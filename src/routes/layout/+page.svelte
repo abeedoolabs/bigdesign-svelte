@@ -99,10 +99,7 @@
     { name: 'action', type: 'Snippet', description: 'Action slot (top-right)' }
   ]}
 >
-  {#snippet panelAction()}
-    <Button variant="secondary" mobileWidth="auto">Edit</Button>
-  {/snippet}
-  <Panel header="Panel Title" description="Optional description text" action={panelAction}>
+  <Panel header="Panel Title" description="Optional description text">
     <p style="margin:0">Panel body content goes here. Panels provide raised card styling with an optional header area.</p>
   </Panel>
 </Demo>
