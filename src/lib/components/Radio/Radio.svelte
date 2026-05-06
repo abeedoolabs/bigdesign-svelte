@@ -6,16 +6,18 @@
     description?: string;
     name?: string;
     value?: string;
+    group?: string;
     onchange?: (e: Event) => void;
   }
 
   let {
-    checked = $bindable(false),
+    checked = false,
     disabled = false,
     label,
     description,
     name,
     value,
+    group = $bindable(''),
     onchange,
   }: Props = $props();
 
@@ -28,7 +30,8 @@
       type="radio"
       class="bd-radio__input"
       id={inputId}
-      bind:checked
+      bind:group
+      {checked}
       {disabled}
       {name}
       {value}

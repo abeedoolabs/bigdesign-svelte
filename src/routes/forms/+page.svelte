@@ -6,7 +6,7 @@
   let textareaVal = $state('');
   let selectVal = $state('');
   let checkVal = $state(false);
-  let radioVal = $state(false);
+  let shippingMethod = $state('standard');
   let switchVal = $state(true);
 </script>
 
@@ -111,21 +111,21 @@
   title="Radio"
   description="Radio button with label and description."
   code={`<Fieldset legend="Shipping Method">
-  <Radio name="shipping" label="Standard" value="standard" />
-  <Radio name="shipping" label="Express" value="express" />
+  <Radio name="shipping" label="Standard" value="standard" bind:group={selected} />
+  <Radio name="shipping" label="Express" value="express" bind:group={selected} />
 </Fieldset>`}
   props={[
     { name: 'label', type: 'string', description: 'Radio label (required)' },
-    { name: 'checked', type: 'boolean', description: 'Bindable checked state' },
+    { name: 'group', type: 'string', description: 'Bindable group value (use bind:group)' },
     { name: 'name', type: 'string', description: 'Radio group name' },
     { name: 'value', type: 'string', description: 'Radio value' },
     { name: 'description', type: 'string', description: 'Helper text' }
   ]}
 >
   <Fieldset legend="Shipping Method">
-    <Radio name="demo-shipping" label="Standard (5-7 days)" value="standard" checked={true} />
-    <Radio name="demo-shipping" label="Express (2-3 days)" value="express" />
-    <Radio name="demo-shipping" label="Overnight" value="overnight" disabled />
+    <Radio name="demo-shipping" label="Standard (5-7 days)" value="standard" bind:group={shippingMethod} />
+    <Radio name="demo-shipping" label="Express (2-3 days)" value="express" bind:group={shippingMethod} />
+    <Radio name="demo-shipping" label="Overnight" value="overnight" bind:group={shippingMethod} disabled />
   </Fieldset>
 </Demo>
 
