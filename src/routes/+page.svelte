@@ -13,8 +13,8 @@
 
   const quickStartCode = `<` + `!-- Add theme CSS in your root layout -->
 <` + `script>
-  ${'import'} '@radish/bigdesign-svelte/theme';
-  ${'import'} { Button, Input, Panel } from '@radish/bigdesign-svelte';
+  ${'import'} '@abeedoo/bigdesign-svelte/theme';
+  ${'import'} { Button, Input, Panel } from '@abeedoo/bigdesign-svelte';
 <` + `/script>
 
 <Panel header="My Panel">
@@ -52,7 +52,7 @@
 
   <div class="overview__install">
     <h2 class="overview__install-title">Installation</h2>
-    <pre class="overview__code"><code>npm install @radish/bigdesign-svelte</code></pre>
+    <pre class="overview__code"><code>npm install @abeedoo/bigdesign-svelte</code></pre>
 
     <h3 class="overview__usage-title">Quick Start</h3>
     <pre class="overview__code"><code>{quickStartCode}</code></pre>

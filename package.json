@@ -1,5 +1,5 @@
 {
-	"name": "@radish/bigdesign-svelte",
+	"name": "@abeedoo/bigdesign-svelte",
 	"version": "0.1.0",
 	"description": "Svelte 5 port of BigCommerce's BigDesign component library",
 	"type": "module",
@@ -41,7 +41,7 @@
 		"vite": "^6.0.0"
 	},
 	"publishConfig": {
-		"@radish:registry": "https://gitlab.mini1.abeedoo.com/api/v4/projects/4/packages/npm/"
+		"@abeedoo:registry": "https://gitlab.mini1.abeedoo.com/api/v4/projects/4/packages/npm/"
 	},
 	"repository": {
 		"type": "git",

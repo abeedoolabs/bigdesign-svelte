@@ -8,14 +8,14 @@
 
 A **Svelte 5 port of BigCommerce's [BigDesign](https://github.com/bigcommerce/big-design) React component library**. The goal is pixel-accurate components that look native inside BigCommerce admin panels, usable in any SvelteKit app.
 
-**Package:** `@radish/bigdesign-svelte`
-**Registry:** `gitlab.mini1.abeedoo.com` (Radish npm registry)
+**Package:** `@abeedoo/bigdesign-svelte`
+**Registry:** `gitlab.mini1.abeedoo.com` (Abeedoo npm registry)
 
 ### Who Uses This
 
 - **Radish Care** (`/Projects/radish-care`) — embedded BC app panel for support chat
 - **CommerceHub** (`/Projects/CommerceHub`) — BigCommerce product management app
-- **Future Radish BC integrations** — any app that needs native BC admin styling
+- **Future Abeedoo BC integrations** — any app that needs native BC admin styling
 
 ---
 
@@ -155,9 +155,9 @@ npm run package
 npm publish
 ```
 
-Published to the Radish npm registry. Consumed in projects as:
+Published to the Abeedoo npm registry. Consumed in projects as:
 ```bash
-npm install @radish/bigdesign-svelte
+npm install @abeedoo/bigdesign-svelte
 ```
 
 ---
