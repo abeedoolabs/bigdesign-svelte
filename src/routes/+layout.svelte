@@ -11,31 +11,31 @@
     { label: 'Overview', href: '/' },
     {
       label: 'Layout', href: '/layout',
-      items: ['Box', 'Flex', 'Grid', 'Panel']
+      items: ['Box', 'Flex', 'Grid', 'Panel', 'Collapse', 'AccordionPanel']
     },
     {
       label: 'Actions', href: '/actions',
-      items: ['Button', 'Link', 'Dropdown']
+      items: ['Button', 'ButtonGroup', 'Link', 'Dropdown']
     },
     {
       label: 'Forms', href: '/forms',
-      items: ['Input', 'Textarea', 'Select', 'Checkbox', 'Radio', 'Switch', 'Fieldset', 'Form']
+      items: ['Input', 'Textarea', 'Select', 'MultiSelect', 'Checkbox', 'Radio', 'Switch', 'Toggle', 'Counter', 'Search', 'Datepicker', 'FileUploader', 'Fieldset', 'Form']
     },
     {
       label: 'Data Display', href: '/data-display',
-      items: ['Typography', 'Badge', 'Table', 'StatefulTable']
+      items: ['Typography', 'Badge', 'Chip', 'Lozenge', 'List', 'Table', 'StatefulTable']
     },
     {
       label: 'Feedback', href: '/feedback',
-      items: ['Alert', 'InlineMessage']
+      items: ['Alert', 'InlineMessage', 'Message', 'StatusMessage', 'ProgressBar', 'ProgressCircle']
     },
     {
       label: 'Navigation', href: '/navigation',
-      items: ['Tabs', 'OffsetPagination']
+      items: ['Tabs', 'PillTabs', 'Stepper', 'OffsetPagination', 'StatelessPagination']
     },
     {
       label: 'Overlays', href: '/overlays',
-      items: ['Modal', 'Tooltip']
+      items: ['Modal', 'Tooltip', 'Popover']
     }
   ];
 

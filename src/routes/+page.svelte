@@ -1,12 +1,12 @@
 <script lang="ts">
   const categories: Record<string, string[]> = {
-    'Layout': ['Box', 'Flex', 'Grid', 'Panel'],
-    'Actions': ['Button', 'Link', 'Dropdown'],
-    'Forms': ['Input', 'Textarea', 'Select', 'Checkbox', 'Radio', 'Switch', 'Fieldset', 'Form'],
-    'Data Display': ['Typography', 'Badge', 'Table', 'StatefulTable'],
-    'Feedback': ['Alert', 'InlineMessage'],
-    'Navigation': ['Tabs', 'OffsetPagination'],
-    'Overlays': ['Modal', 'Tooltip']
+    'Layout': ['Box', 'Flex', 'Grid', 'Panel', 'Collapse', 'AccordionPanel'],
+    'Actions': ['Button', 'ButtonGroup', 'Link', 'Dropdown'],
+    'Forms': ['Input', 'Textarea', 'Select', 'MultiSelect', 'Checkbox', 'Radio', 'Switch', 'Toggle', 'Counter', 'Search', 'Datepicker', 'FileUploader', 'Fieldset', 'Form'],
+    'Data Display': ['Typography', 'Badge', 'Chip', 'Lozenge', 'List', 'Table', 'StatefulTable'],
+    'Feedback': ['Alert', 'InlineMessage', 'Message', 'StatusMessage', 'ProgressBar', 'ProgressCircle'],
+    'Navigation': ['Tabs', 'PillTabs', 'Stepper', 'OffsetPagination', 'StatelessPagination'],
+    'Overlays': ['Modal', 'Tooltip', 'Popover']
   };
 
   const total = Object.values(categories).flat().length;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Demo from '../../playground/Demo.svelte';
-  import { Modal, Tooltip, Button } from '$lib/index.js';
+  import { Modal, Tooltip, Popover, Button } from '$lib/index.js';
 
   let modalOpen = $state(false);
 </script>
@@ -76,6 +76,33 @@
       <Button variant="secondary" mobileWidth="auto">Left</Button>
     </Tooltip>
   </div>
+</Demo>
+
+<Demo
+  title="Popover"
+  description="Floating content panel triggered by a click, with configurable placement."
+  code={`<Popover placement="bottom">
+  {#snippet trigger()}
+    <Button variant="secondary">Open Popover</Button>
+  {/snippet}
+  <p>Popover content here.</p>
+</Popover>`}
+  props={[
+    { name: 'isOpen', type: 'boolean', description: 'Bindable open state' },
+    { name: 'placement', type: "'top' | 'right' | 'bottom' | 'left'", default: "'bottom'", description: 'Popover position' },
+    { name: 'onClose', type: '() => void', description: 'Close callback' },
+    { name: 'trigger', type: 'Snippet', description: 'Trigger element (required)' }
+  ]}
+>
+  {#snippet popTrigger()}
+    <Button variant="secondary" mobileWidth="auto">Open Popover</Button>
+  {/snippet}
+  <Popover trigger={popTrigger} placement="bottom">
+    <div style="font-family:var(--bd-font-family)">
+      <p style="margin:0 0 0.5rem;font-weight:600">Popover Title</p>
+      <p style="margin:0;font-size:0.875rem;color:var(--bd-color-text-secondary)">This is floating content that appears on click. Click outside or press Escape to dismiss.</p>
+    </div>
+  </Popover>
 </Demo>
 
 <style>

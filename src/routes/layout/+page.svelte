@@ -1,6 +1,6 @@
 <script lang="ts">
   import Demo from '../../playground/Demo.svelte';
-  import { Box, Flex, FlexItem, Grid, GridItem, Panel, Button } from '$lib/index.js';
+  import { Box, Flex, FlexItem, Grid, GridItem, Panel, Button, Collapse, AccordionPanel } from '$lib/index.js';
 </script>
 
 <h1 class="page-title">Layout</h1>
@@ -105,6 +105,46 @@
   <Panel header="Panel Title" description="Optional description text" action={panelAction}>
     <p style="margin:0">Panel body content goes here. Panels provide raised card styling with an optional header area.</p>
   </Panel>
+</Demo>
+
+<Demo
+  title="Collapse"
+  description="Expandable/collapsible content section with a trigger button."
+  code={`<Collapse title="Show details">
+  <p>Hidden content revealed on click.</p>
+</Collapse>`}
+  props={[
+    { name: 'title', type: 'string', description: 'Trigger button text (required)' },
+    { name: 'initiallyOpen', type: 'boolean', default: 'false', description: 'Start expanded' },
+    { name: 'onCollapseChange', type: '(isOpen: boolean) => void', description: 'State change callback' }
+  ]}
+>
+  <Collapse title="Show additional details">
+    <p style="margin:0">This content is hidden by default and revealed when the trigger is clicked. Useful for progressive disclosure.</p>
+  </Collapse>
+  <Collapse title="Another section" initiallyOpen>
+    <p style="margin:0">This section starts expanded because initiallyOpen is true.</p>
+  </Collapse>
+</Demo>
+
+<Demo
+  title="AccordionPanel"
+  description="Multiple collapsible panels grouped together."
+  code={`<AccordionPanel items={[
+  { id: 'shipping', title: 'Shipping', content: 'Free shipping on orders over $50.' },
+  { id: 'returns', title: 'Returns', content: '30-day return policy.' },
+  { id: 'warranty', title: 'Warranty', content: '1-year manufacturer warranty.' }
+]} />`}
+  props={[
+    { name: 'items', type: 'AccordionItem[]', description: 'Array of accordion items with id, title, content' },
+    { name: 'children', type: 'Snippet<[AccordionItem]>', description: 'Custom render snippet per item' }
+  ]}
+>
+  <AccordionPanel items={[
+    { id: 'shipping', title: 'Shipping', content: 'Free standard shipping on all orders over $50. Express shipping available for $9.99.', defaultExpanded: true },
+    { id: 'returns', title: 'Returns', content: '30-day hassle-free return policy. Items must be in original condition.' },
+    { id: 'warranty', title: 'Warranty', content: '1-year manufacturer warranty covers defects in materials and workmanship.' }
+  ]} />
 </Demo>
 
 <style>

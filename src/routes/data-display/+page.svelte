@@ -1,6 +1,6 @@
 <script lang="ts">
   import Demo from '../../playground/Demo.svelte';
-  import { Typography, HR, Badge, Table, StatefulTable } from '$lib/index.js';
+  import { Typography, HR, Badge, Chip, Lozenge, List, Table, StatefulTable } from '$lib/index.js';
   import type { TableColumn } from '$lib/index.js';
 
   interface Product {
@@ -128,6 +128,79 @@
   ]}
 >
   <StatefulTable {columns} items={sampleProducts} keyField="id" pagination itemsPerPage={3} selectable />
+</Demo>
+
+<Demo
+  title="Chip"
+  description="Compact elements representing tags or attributes, with optional delete."
+  code={`<Chip label="Featured" />
+<Chip label="Removable" onDelete={() => {}} />`}
+  props={[
+    { name: 'label', type: 'string', description: 'Chip text (required)' },
+    { name: 'icon', type: 'Snippet', description: 'Leading icon' },
+    { name: 'onDelete', type: '() => void', description: 'Shows delete button when provided' }
+  ]}
+>
+  <div style="display:flex;flex-wrap:wrap;gap:0.25rem;align-items:center">
+    <Chip label="Featured" />
+    <Chip label="Sale" />
+    <Chip label="Removable" onDelete={() => {}} />
+    <Chip label="Also removable" onDelete={() => {}} />
+  </div>
+</Demo>
+
+<Demo
+  title="Lozenge"
+  description="Small pill-shaped status indicators, more compact than Badge."
+  code={`<Lozenge label="Active" variant="success" />
+<Lozenge label="Draft" variant="secondary" />`}
+  props={[
+    { name: 'label', type: 'string', description: 'Lozenge text (required)' },
+    { name: 'variant', type: "'success' | 'warning' | 'danger' | 'primary' | 'secondary'", default: "'secondary'", description: 'Color variant' }
+  ]}
+>
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+    <Lozenge label="Active" variant="success" />
+    <Lozenge label="Pending" variant="warning" />
+    <Lozenge label="Failed" variant="danger" />
+    <Lozenge label="Info" variant="primary" />
+    <Lozenge label="Draft" variant="secondary" />
+  </div>
+</Demo>
+
+<Demo
+  title="List"
+  description="Styled ordered and unordered lists."
+  code={`<List>
+  <li>First item</li>
+  <li>Second item</li>
+</List>
+<List ordered>
+  <li>Step one</li>
+  <li>Step two</li>
+</List>`}
+  props={[
+    { name: 'ordered', type: 'boolean', default: 'false', description: 'Render as ordered list' }
+  ]}
+>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+    <div>
+      <strong style="font-family:var(--bd-font-family);font-size:var(--bd-font-size-sm);color:var(--bd-color-text-secondary)">Unordered</strong>
+      <List>
+        <li>Widget Pro</li>
+        <li>Gadget Max</li>
+        <li>Thingamajig</li>
+      </List>
+    </div>
+    <div>
+      <strong style="font-family:var(--bd-font-family);font-size:var(--bd-font-size-sm);color:var(--bd-color-text-secondary)">Ordered</strong>
+      <List ordered>
+        <li>Add to cart</li>
+        <li>Enter shipping info</li>
+        <li>Complete payment</li>
+      </List>
+    </div>
+  </div>
 </Demo>
 
 <style>

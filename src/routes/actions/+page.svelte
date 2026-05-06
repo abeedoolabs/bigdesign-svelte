@@ -1,6 +1,6 @@
 <script lang="ts">
   import Demo from '../../playground/Demo.svelte';
-  import { Button, Link, Dropdown } from '$lib/index.js';
+  import { Button, ButtonGroup, Link, Dropdown } from '$lib/index.js';
 </script>
 
 <h1 class="page-title">Actions</h1>
@@ -97,6 +97,25 @@
     ]}
     trigger={dropTrigger}
   />
+</Demo>
+
+<Demo
+  title="ButtonGroup"
+  description="Visually groups buttons together with connected borders."
+  code={`<ButtonGroup>
+  <Button variant="secondary">Left</Button>
+  <Button variant="secondary">Center</Button>
+  <Button variant="secondary">Right</Button>
+</ButtonGroup>`}
+  props={[
+    { name: 'children', type: 'Snippet', description: 'Button components to group' }
+  ]}
+>
+  <ButtonGroup>
+    <Button variant="secondary" mobileWidth="auto">Left</Button>
+    <Button variant="secondary" mobileWidth="auto">Center</Button>
+    <Button variant="secondary" mobileWidth="auto">Right</Button>
+  </ButtonGroup>
 </Demo>
 
 <style>
