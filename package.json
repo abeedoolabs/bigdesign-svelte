@@ -46,7 +46,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.mini1.abeedoo.com/abeedoo/bigdesign-svelte"
+		"url": "git+https://gitlab.mini1.abeedoo.com/abeedoo/bigdesign-svelte.git"
 	},
 	"keywords": [
 		"svelte",
