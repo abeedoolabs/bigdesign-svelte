@@ -10,6 +10,17 @@
   };
 
   const total = Object.values(categories).flat().length;
+
+  const quickStartCode = `<` + `!-- Add theme CSS in your root layout -->
+<` + `script>
+  ${'import'} '@radish/bigdesign-svelte/theme';
+  ${'import'} { Button, Input, Panel } from '@radish/bigdesign-svelte';
+<` + `/script>
+
+<Panel header="My Panel">
+  <Input label="Name" placeholder="Enter your name" />
+  <Button variant="primary">Submit</Button>
+</Panel>`;
 </script>
 
 <div class="overview">
@@ -44,16 +55,7 @@
     <pre class="overview__code"><code>npm install @radish/bigdesign-svelte</code></pre>
 
     <h3 class="overview__usage-title">Quick Start</h3>
-    <pre class="overview__code"><code>{`<!-- Import theme CSS in your root layout -->
-<script>
-  import '@radish/bigdesign-svelte/theme';
-  import { Button, Input, Panel } from '@radish/bigdesign-svelte';
-</script>
-
-<Panel header="My Panel">
-  <Input label="Name" placeholder="Enter your name" />
-  <Button variant="primary">Submit</Button>
-</Panel>`}</code></pre>
+    <pre class="overview__code"><code>{quickStartCode}</code></pre>
   </div>
 </div>
 
