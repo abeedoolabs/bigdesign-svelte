@@ -2,6 +2,8 @@
 
 **Read this at the start of EVERY session.**
 
+@/Users/ctmeece/Projects/abeedoo-knowledge/AGENT_INSTRUCTIONS.md
+
 ---
 
 ## What Is This Project
